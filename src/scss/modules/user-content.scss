@@ -1,0 +1,27 @@
+.user-content {
+    p {
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+    }
+
+    ul {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        list-style-type: disc;
+    }
+
+    li {
+        margin-bottom: 3px;
+    }
+
+    h2 {
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}

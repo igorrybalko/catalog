@@ -1,0 +1,31 @@
+.header {
+ color: $c-white;
+ background: $bg-main;
+}
+
+.header__logo {
+    display: inline-block;
+    width: 60px;
+}
+
+.menu-main-container{
+    ul {
+        display: flex;
+    }
+
+    li {
+        a {
+            padding: 0 10px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .menu-main-container {
+        ul {
+            padding-top: 10px;
+            flex-direction: column;
+        }
+    }
+}

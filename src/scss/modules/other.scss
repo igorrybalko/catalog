@@ -1,0 +1,36 @@
+.form-add {
+ .wpcf7-list-item-label {
+  display: none;
+ }
+
+ .wpcf7-list-item {
+  position: absolute;
+  left: 0;
+  margin: 0;
+  top: -2px;
+ }
+
+ .wpcf7-form-control-wrap {
+  position: static;
+ }
+}
+
+.add-form__agree {
+ position: relative;
+ padding-left: 24px;
+}
+
+.side-cats {
+ ul {
+  a {
+   display: block;
+   padding: 2px 0 5px 3px;
+   &:hover,
+   &.active {
+    color: $c-white;
+    background: $bg-main;
+    padding-left: 12px;
+   }
+  }
+ }
+}
