@@ -27,12 +27,12 @@ $cats = getCategories();
 
 
 
-<div class="container">
+<main class="container">
 
-    <pre>
+    <!-- <pre>
         <?php 
         //var_dump(count($items))?>
-    </pre>
+    </pre> -->
     <?php if(have_posts()): ?>
         <?php while(have_posts()): the_post(); ?>
             <h1 class="font-bold mb-6 text-xl"><?php the_title()?></h1>
@@ -47,7 +47,7 @@ $cats = getCategories();
              
         <?php endwhile; ?>
     <?php endif; ?>
-</div>
+</main>
 
 <?php
 

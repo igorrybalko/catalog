@@ -1,0 +1,39 @@
+.comment-form-cookies-consent {
+    display: flex;
+    align-items: center;
+
+    label {
+        padding-left: 10px;
+    }
+}
+
+.comment-meta {
+    margin-bottom: 5px;
+    a {
+        color: rgb(107, 114, 128);
+        font-size: 14px;
+    }
+}
+.commentlist li,
+.comment-notes,
+.comment-form-email,
+.comment-form-author,
+.comment-form-comment {
+    margin-bottom: 1.25rem;
+}
+
+.comment-reply-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h3#comments{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.comment-reply-link {
+    text-decoration: underline;
+}

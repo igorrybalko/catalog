@@ -1,6 +1,6 @@
 <?php
 get_header(); ?>
-<div class="container">
+<main class="container">
 
 <?php
 if (have_posts()): ?>
@@ -13,12 +13,10 @@ if (have_posts()): ?>
                 <div class="user-content">
                     <?php the_content();?>
                 </div>
-                    
-          
         <?php
     endwhile; ?>
 <?php endif; ?>
-</div>
+</main>
 <?php
 
 get_footer();

@@ -10,17 +10,17 @@
                 </div>
               
                 <div class="fmenuwr">
-                    <div class="foot-menu">
+                    <nav class="foot-menu">
                         <?php wp_nav_menu( array('theme_location'  => 'bottom')); ?>
-                    </div>
+                    </nav>
                 </div>
 
                 <div class="slinkwr">
-                    <div class="flinks">
+                    <!-- <div class="flinks">
                         <a class="slink slink-1" href="#" target="_blank"></a>
                         <a class="slink slink-2" href="#" target="_blank"></a>
                         <a class="slink slink-3" href="#" target="_blank"></a>
-                    </div>
+                    </div> -->
                    
                     <!-- hit.ua -->
                     <a href='http://hit.ua/?x=15878' target='_blank'>

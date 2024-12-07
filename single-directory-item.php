@@ -19,7 +19,7 @@ $otherCats = get_categories( array(
 
 <div class="container">
     <div class="lg:flex gap-x-4">
-        <div class="lg:w-3/4 mb-5">
+        <main class="lg:w-3/4 mb-5">
         <?php if(have_posts()):
                     while ( have_posts() ) :
                 the_post(); 
@@ -37,7 +37,7 @@ $otherCats = get_categories( array(
                 <div class="mb-2 text-gray-500">Категорія: <?= $cats[0]->name?></div>
                 <div class="mb-3 text-gray-500 text-sm"><?= get_the_date()?></div>
                 <?php if($logo){?>
-                <div class="mb-2 max-w-28">
+                <div class="mb-2 max-w-32">
                     <img class="max-h-28" src="<?= $logo?>" alt="logo">
                 </div>
                 <?php }?>
@@ -47,25 +47,26 @@ $otherCats = get_categories( array(
                 <a class="underline" target="_blank" href="<?= $siteUrl;?>"><?= $labelSiteUrl;?></a>
             <?php endwhile; ?>
         <?php endif;?>
-        </div>
+        </main>
 
-        <div class="lg:w-1/4 side-cats">
+        <aside class="lg:w-1/4 side-cats">
             <h3 class="font-bold mb-2">
                 <a href="<?= get_category_link( $rootCatId ) ?>">
                     <?= $rootCatName?>
                 </a>
             </h3>
-
-            <ul>
-            <?php foreach ($otherCats as $cat) { ?>
-                <li>
-                    <a class="<?php echo $cat->term_id == $cats[0]->term_id ? 'active' : ''; ?>" href="<?= get_category_link( $cat->term_id ) ?>">
-                        <?= $cat->name;?>
-                    </a>
-                </li>
-            <?php } ?>
-            </ul>
-        </div>
+            <nav>
+                <ul>
+                <?php foreach ($otherCats as $cat) { ?>
+                    <li>
+                        <a class="<?php echo $cat->term_id == $cats[0]->term_id ? 'active' : ''; ?>" href="<?= get_category_link( $cat->term_id ) ?>">
+                            <?= $cat->name;?>
+                        </a>
+                    </li>
+                <?php } ?>
+                </ul>
+            </nav>
+        </aside>
     </div>
 </div>
 <?php

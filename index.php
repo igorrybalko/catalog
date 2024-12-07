@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<main class="container">
 <h1 class="font-bold mb-6 text-xl">Блог</h1>
 <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
@@ -23,7 +23,7 @@
     <?php wp_pagenavi(); ?>
 <?php endif; ?>
 
-</div>
+</main>
 
 
 <?php get_footer(); ?>

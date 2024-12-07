@@ -3,7 +3,7 @@
 $cats = getCategories();
 ?>
 
-<div class="container">
+<main class="container">
 
 <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
@@ -46,6 +46,6 @@ $cats = getCategories();
     <?php endwhile; ?>
 <?php endif; ?>
 
-</div>
+</main>
 
 <?php get_footer();

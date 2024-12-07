@@ -27,7 +27,7 @@ $cats = get_categories( array(
 
     <div class="lg:flex gap-x-4">
 
-        <div class="lg:w-3/4">
+        <main class="lg:w-3/4">
             <h1 class="font-bold mb-6 text-xl"><?= $category->name?></h1>
 
             <?php if(have_posts()): ?>
@@ -66,25 +66,26 @@ $cats = get_categories( array(
 
                 <?php wp_pagenavi(); ?>
             <?php endif; ?>
-        </div>
+        </main>
 
-        <div class="lg:w-1/4 side-cats"> 
+        <aside class="lg:w-1/4 side-cats"> 
             <h3 class="font-bold mb-2">
                 <a href="<?= get_category_link( $rootCatId ) ?>">
                     <?= $rootCatName?>
                 </a>
             </h3>
-            <ul>
-            <?php foreach ($cats as $cat) { ?>
-                <li>
-                    <a class="<?php echo $category->term_id == $cat->term_id ? 'active' : ''; ?>" href="<?= get_category_link( $cat->term_id ) ?>">
-                        <?= $cat->name;?>
-                    </a>
-                </li>
-            <?php } ?>
-            </ul>
-
-        </div>
+            <nav>
+                <ul>
+                <?php foreach ($cats as $cat) { ?>
+                    <li>
+                        <a class="<?php echo $category->term_id == $cat->term_id ? 'active' : ''; ?>" href="<?= get_category_link( $cat->term_id ) ?>">
+                            <?= $cat->name;?>
+                        </a>
+                    </li>
+                <?php } ?>
+                </ul>
+            </nav>
+        </aside>
     </div>
 </div>
 

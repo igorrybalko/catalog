@@ -37,9 +37,9 @@
                         </div>
                     </div>
 
-                    <div class="top-menu hidden md:block">
+                    <nav class="top-menu hidden md:block">
                         <?php wp_nav_menu( array('theme_location'  => 'main')); ?>
-                    </div>
+                    </nav>
                 </div>
             </div>
                     
