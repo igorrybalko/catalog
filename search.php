@@ -15,7 +15,7 @@ $sQuery = get_search_query();
 <div class="container">
 
     
-    <h1 class="font-bold mb-6 text-xl">
+    <h1 class="font-bold mb-6 text-2xl">
         <?php if($sQuery){?>
             Ви шукали: "<?= $sQuery ?>"
         <?php } else { ?>

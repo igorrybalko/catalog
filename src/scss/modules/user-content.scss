@@ -11,14 +11,26 @@
         list-style-type: disc;
     }
 
+    ol {
+        margin-bottom: 10px;
+        list-style-type: decimal;
+        padding-left: 20px;
+    }
+
     li {
-        margin-bottom: 3px;
+        margin-bottom: 5px;
     }
 
     h2 {
         font-weight: bold;
         margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    h3 {
         font-size: 18px;
+        font-weight: bold;
+        margin: 15px 0;
     }
 
     a {

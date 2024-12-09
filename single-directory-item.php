@@ -32,7 +32,7 @@ $otherCats = get_categories( array(
                     $labelSiteUrl = $siteUrl;
                 }
                 ?>
-                <h1 class="font-bold mb-6 text-xl"><?php the_title()?></h1>
+                <h1 class="font-bold mb-6 text-2xl"><?php the_title()?></h1>
                 
                 <div class="mb-2 text-gray-500">Категорія: <?= $cats[0]->name?></div>
                 <div class="mb-3 text-gray-500 text-sm"><?= get_the_date()?></div>

@@ -35,7 +35,7 @@ $cats = getCategories();
     </pre> -->
     <?php if(have_posts()): ?>
         <?php while(have_posts()): the_post(); ?>
-            <h1 class="font-bold mb-6 text-xl"><?php the_title()?></h1>
+            <h1 class="font-bold mb-6 text-2xl"><?php the_title()?></h1>
 
             <div class="form-add lg:w-1/2 mx-auto mb-6">
                 <?php echo do_shortcode('[contact-form-7 id="9cc808b" title="Add site"]')?>

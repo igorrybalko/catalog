@@ -9,7 +9,7 @@ if (have_posts()): ?>
         
         ?>
       
-                <h1 class="font-bold mb-6 text-xl"><?php the_title()?></h1>
+                <h1 class="font-bold mb-6 text-2xl"><?php the_title()?></h1>
                 <div class="user-content">
                     <?php the_content();?>
                 </div>

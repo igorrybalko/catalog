@@ -19,7 +19,7 @@ if (have_posts()): ?>
 
     <?php while (have_posts()): the_post(); ?>
         
-    <h1 class="font-bold mb-6 text-xl"><?php the_title()?></h1>
+    <h1 class="font-bold mb-6 text-2xl"><?php the_title()?></h1>
 
     <?php foreach ($items as $item) { 
         $postDate = date("d/m/Y", strtotime($item->post_date));
@@ -48,11 +48,11 @@ if (have_posts()): ?>
 
                 <div class="flex-1">
 
-                    <h4 class="font-bold mb-1">
+                    <h3 class="font-bold mb-1">
                         <a class="underline" href="<?php the_permalink($item->ID); ?>">
                             <?= $item->post_title?>
                         </a>
-                    </h4>
+                    </h3>
 
                     <div class="mb-1 text-gray-500 text-sm">
                         <?= $postDate;?>

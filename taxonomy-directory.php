@@ -28,7 +28,7 @@ $cats = get_categories( array(
     <div class="lg:flex gap-x-4">
 
         <main class="lg:w-3/4">
-            <h1 class="font-bold mb-6 text-xl"><?= $category->name?></h1>
+            <h1 class="font-bold mb-6 text-2xl"><?= $category->name?></h1>
 
             <?php if(have_posts()): ?>
                 <?php while(have_posts()): the_post(); 
@@ -50,11 +50,11 @@ $cats = get_categories( array(
                         </div>
             
                         <div class="flex-1">
-                            <h4 class="font-bold mb-1">
+                            <h3 class="font-bold mb-1">
                                 <a class="underline" href="<?php the_permalink(); ?>">
                                     <?php the_title();?>
                                 </a>
-                            </h4>
+                            </h3>
                             <div>
                                 <?= mb_substr(strip_tags(get_the_content()), 0, 200); ?>...
                             </div>

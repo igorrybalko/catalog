@@ -8,7 +8,7 @@ $cats = getCategories();
 <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
 
-        <h1 class="font-bold mb-6 text-xl">
+        <h1 class="font-bold mb-6 text-2xl">
             <?php the_title();?>
         </h1>
 
@@ -16,11 +16,11 @@ $cats = getCategories();
             <?php foreach ($cats as $cat) { ?>
 
                 <div>
-                    <h4 class="font-semibold">
+                    <h3 class="font-semibold">
                         <a href="<?= get_category_link( $cat->term_id ) ?>">
                             <?= $cat->name;?> (<?= $cat->count;?>)
                         </a>
-                    </h4>
+                    </h3>
                     <ul>
 
                         <?php foreach ($cat->children as $item) { ?>
