@@ -274,3 +274,38 @@ function website_remove($fields)
    unset($fields['url']);
    return $fields;
 }
+
+
+// add_action('acf/init', 'my_acf_op_init');
+// function my_acf_op_init() {
+
+//     // Check function exists.
+//     if( function_exists('acf_add_options_page') ) {
+
+//         // Register options page.
+//         $option_page = acf_add_options_page(array(
+//             'page_title'    => __('Theme General Settings'),
+//             'menu_title'    => __('Theme Settings'),
+//             'menu_slug'     => 'theme-general-settings',
+//             'capability'    => 'edit_posts',
+//             'redirect'      => false
+//         ));
+//     }
+// }
+
+
+/*
+ * Set post views count using post meta//functions.php
+ */
+function customSetPostViews($postID) {
+    $countKey = 'post_views_count';
+    $count = get_post_meta($postID, $countKey, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $countKey);
+        add_post_meta($postID, $countKey, '1');
+    }else{
+        $count++;
+        update_post_meta($postID, $countKey, $count);
+    }
+}

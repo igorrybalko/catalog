@@ -15,8 +15,9 @@ $otherCats = get_categories( array(
     'orderby'    => 'name',
     'order'      => 'ASC',
 ) ); 
-?>
 
+customSetPostViews(get_the_ID());
+?>
 <div class="container">
     <div class="lg:flex gap-x-4">
         <main class="lg:w-3/4 mb-5">
