@@ -59,6 +59,7 @@ function register_theme_scripts() {
 
     wp_enqueue_script("jquery");
     wp_enqueue_script('app', get_template_directory_uri() . '/js/app.min.js');
+    wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/33338162bf.js');
 
 }
 
@@ -239,7 +240,7 @@ function tw_cf7_shortcode_exists($post_id = null)
             global $post;
             $post_id = $post->ID;
         }
-        return $post_id == 17;
+        return in_array($post_id, CONF_7FORM_PAGE_IDS);
     }
     return false;
 }

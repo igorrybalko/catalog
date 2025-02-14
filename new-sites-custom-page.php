@@ -55,7 +55,7 @@ if (have_posts()): ?>
                     </h3>
 
                     <div class="mb-1 text-gray-500 text-sm">
-                        <?= $postDate;?>
+                        <i class="fa-solid fa-calendar-days"></i> <?= $postDate;?>
                     </div>
                     <div>
                         <?= mb_substr(strip_tags($item->post_content), 0, 170);?>...

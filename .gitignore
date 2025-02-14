@@ -4,3 +4,4 @@ package-lock.json
 *.min.css
 *.min.js
 *.zip
+/conf
