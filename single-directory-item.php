@@ -32,14 +32,21 @@ customSetPostViews(get_the_ID());
                 if(!$labelSiteUrl){
                     $labelSiteUrl = $siteUrl;
                 }
+
+                $post_views_count = get_post_meta( get_the_ID(), 'post_views_count', true );
+ 
                 ?>
                 <h1 class="font-bold mb-6 text-2xl"><?php the_title()?></h1>
-                
                 <div class="mb-2 text-gray-500">Категорія: <?= $cats[0]->name?></div>
-                <div class="mb-3 text-gray-500 text-sm"><i class="fa-solid fa-calendar-days"></i> <?= get_the_date()?></div>
+                <div class="mb-2 text-gray-500 text-sm"><i class="fa-solid fa-calendar-days"></i> <?= get_the_date()?></div>
+                <?php if(! empty( $post_views_count )){ ?>
+                    <div class="mb-3 text-gray-500 text-sm"><i class="fa-solid fa-eye"></i> Перегляди: <?= $post_views_count;?></div>
+                <?php } ?>
                 <?php if($logo){?>
                 <div class="mb-2 max-w-32">
-                    <img class="max-h-28" src="<?= $logo?>" alt="logo">
+                    <a class="underline" target="_blank" href="<?= $siteUrl;?>">
+                        <img class="max-h-28" src="<?= $logo?>" alt="logo">
+                    </a>
                 </div>
                 <?php }?>
                 <div class="user-content mb-5">
