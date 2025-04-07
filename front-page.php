@@ -43,6 +43,8 @@ $cats = getCategories();
             <?php the_content(); ?>
         </div>
 
+        <?php require_once (__DIR__ . '/includes/common/rating.php');?>
+
     <?php endwhile; ?>
 <?php endif; ?>
 
