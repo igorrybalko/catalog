@@ -27,6 +27,7 @@ customSetPostViews(get_the_ID());
 
                 $logo = get_field('logo');
                 $siteUrl = get_field('site_url');
+                $video = get_field('video');
 
                 $labelSiteUrl = get_field('label_site_url');
                 if(!$labelSiteUrl){
@@ -53,6 +54,20 @@ customSetPostViews(get_the_ID());
                     <?php the_content();?>
                 </div>
                 <a class="underline" target="_blank" href="<?= $siteUrl;?>"><?= $labelSiteUrl;?></a>
+                
+                <?php if($video){?>
+                <div class="pt-6">
+                    <h2 class="font-bold mb-4 text-xl">Відеопрезентація</h2>
+                    <div class="response-video">
+                    <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/<?= $video?>"
+                         title="YouTube video player" 
+                         frameborder="0" 
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <?php }?>
             <?php endwhile; ?>
         <?php endif;?>
         </main>
