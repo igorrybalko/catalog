@@ -69,7 +69,7 @@ $cats = get_categories( array(
         </main>
 
         <aside class="lg:w-1/4 side-cats"> 
-            <h3 class="font-bold mb-2">
+            <h3 class="font-bold mb-2 text-lg">
                 <a href="<?= get_category_link( $rootCatId ) ?>">
                     <?= $rootCatName?>
                 </a>
