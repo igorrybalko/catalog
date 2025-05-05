@@ -18,7 +18,7 @@
 </head>
 <body <?php body_class(); ?>>
     <div>
-        <header class="header py-4 shadow mb-6">
+        <header class="header py-4 shadow mb-6 rounded-b-xl">
 
             <div class="container">
                 <div class="flex justify-between md:items-center flex-col md:flex-row">

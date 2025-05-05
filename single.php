@@ -6,7 +6,15 @@ get_header();
         <main class="lg:w-3/4 mb-5">
             <?php if(have_posts()):
                         while ( have_posts() ) :
-                    the_post();  ?>
+                    the_post();  
+                    $imgUrl = get_the_post_thumbnail_url();
+                    ?>
+
+                    <?php if($imgUrl){ ?>
+                        <div class="mb-3 max-h-[200px]">
+                            <img class="object-cover w-full object-center rounded-xl h-full max-h-[200px]" src="<?= $imgUrl?>" alt="">
+                        </div>
+                    <?php } ?>
                     <h1 class="font-bold mb-6 text-2xl"><?php the_title()?></h1>
                     <div class="mb-3 text-gray-500 text-sm"><i class="fa-solid fa-calendar-days"></i> <?= get_the_date()?></div>
                     <div class="user-content mb-8">

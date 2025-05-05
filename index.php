@@ -4,7 +4,18 @@
         <main class="lg:w-3/4 mb-5">
         <h1 class="font-bold mb-6 text-2xl">Блог</h1>
         <?php if(have_posts()): ?>
-            <?php while(have_posts()): the_post(); ?>
+            <?php while(have_posts()): the_post(); 
+            
+                $imgUrl = get_the_post_thumbnail_url();
+            ?>
+
+                <?php if($imgUrl){ ?>
+                    <div class="mb-3 max-h-[200px] rounded-xl overflow-hidden">
+                        <a href="<?php the_permalink(); ?>">
+                            <img class="object-cover w-full object-center rounded-xl h-full max-h-[200px] hover:scale-105 duration-500" src="<?= $imgUrl?>" alt="">
+                        </a>
+                    </div>
+                <?php } ?>
 
                 <div class="mb-5">
 

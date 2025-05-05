@@ -1,5 +1,5 @@
 </div>
-<footer class="footer mt-6 py-4">
+<footer class="footer mt-6 py-4 rounded-t-xl">
     
         <div class="container">
             <div class="grid grid-cols-3 gap-4">
