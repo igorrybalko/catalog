@@ -11,13 +11,13 @@
 
                 <?php if($imgUrl){ ?>
                     <div class="mb-3 max-h-[200px] rounded-xl overflow-hidden">
-                        <a href="<?php the_permalink(); ?>">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
                             <img class="object-cover w-full object-center rounded-xl h-full max-h-[200px] hover:scale-105 duration-500" src="<?= $imgUrl?>" alt="">
                         </a>
                     </div>
                 <?php } ?>
 
-                <div class="mb-8">
+                <div class="mb-9">
 
                     <h3 class="font-bold mb-1">
                         <a class="underline" href="<?php the_permalink(); ?>">
