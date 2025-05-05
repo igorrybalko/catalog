@@ -17,7 +17,7 @@
                     </div>
                 <?php } ?>
 
-                <div class="mb-7">
+                <div class="mb-8">
 
                     <h3 class="font-bold mb-1">
                         <a class="underline" href="<?php the_permalink(); ?>">
