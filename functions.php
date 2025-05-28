@@ -118,6 +118,7 @@ function create_post_type() {
            'has_archive' => true,
            'taxonomies' => array('directory'),
            'hierarchical' => true,
+           'supports' => ['comments'],
        )
    );
 }
@@ -310,3 +311,12 @@ function customSetPostViews($postID) {
         update_post_meta($postID, $countKey, $count);
     }
 }
+
+function comment_form_change_cookies_consent( $fields ) {
+	$commenter = wp_get_current_commenter();
+	$consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+	$fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+					 '<label for="wp-comment-cookies-consent">Зберегти моє ім\'я та e-mail в цьому браузері для моїх подальших коментарів.</label></p>';
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'comment_form_change_cookies_consent' );

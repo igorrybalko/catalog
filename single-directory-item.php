@@ -53,10 +53,12 @@ customSetPostViews(get_the_ID());
                 <div class="user-content mb-5">
                     <?php the_content();?>
                 </div>
-                <a class="underline" target="_blank" href="<?= $siteUrl;?>"><?= $labelSiteUrl;?></a>
+                <div class="mb-5">
+                    <a class="underline" target="_blank" href="<?= $siteUrl;?>"><?= $labelSiteUrl;?></a>
+                </div>
                 
                 <?php if($video){?>
-                <div class="pt-6">
+                <div>
                     <h2 class="font-bold mb-4 text-xl">Відеопрезентація</h2>
                     <div class="response-video">
                     <iframe width="560" height="315" 
@@ -68,6 +70,12 @@ customSetPostViews(get_the_ID());
                     </div>
                 </div>
                 <?php }?>
+                <?php 
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
+                    ?>
             <?php endwhile; ?>
         <?php endif;?>
         </main>
