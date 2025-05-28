@@ -118,7 +118,7 @@ function create_post_type() {
            'has_archive' => true,
            'taxonomies' => array('directory'),
            'hierarchical' => true,
-           'supports' => ['comments'],
+           'supports' => ['comments', 'editor', 'thumbnail', 'title'],
        )
    );
 }
