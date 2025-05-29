@@ -23,7 +23,7 @@ $post_views_count = get_post_meta( $item->ID, 'post_views_count', true );
 
     <div class="flex">
 
-        <div class="mr-2.5 w-20 text-center pt-0.5">
+        <div class="mr-2.5 w-20 text-center pt-0.5 flex justify-center">
             <a href="<?php the_permalink($item->ID); ?>">
                 <img class="max-h-20" src="<?php echo $logo; ?>" alt="logo">
             </a>
