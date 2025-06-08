@@ -79,6 +79,7 @@ if ( post_password_required() ) { ?>
 $comments_args = [
     'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 pt-2 pb-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" value="%4$s" />',
     'submit_field'         => '<p class="form-submit pt-5">%1$s %2$s</p>',
+	'title_reply' => 'Залишити відгук'
 ];
 
 

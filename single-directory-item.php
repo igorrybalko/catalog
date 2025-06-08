@@ -54,7 +54,7 @@ customSetPostViews(get_the_ID());
                     <?php the_content();?>
                 </div>
                 <div class="mb-5">
-                    <a class="underline" target="_blank" href="<?= $siteUrl;?>"><?= $labelSiteUrl;?></a>
+                    <span class="text-gray-500">Сайт:</span> <a class="underline text-blue-700 hover:text-blue-400" target="_blank" href="<?= $siteUrl;?>"><?= $labelSiteUrl;?></a>
                 </div>
                 
                 <?php if($video){?>

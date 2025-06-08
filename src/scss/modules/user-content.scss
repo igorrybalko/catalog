@@ -35,5 +35,10 @@
 
     a {
         text-decoration: underline;
+        color: rgb(29 78 216);
+
+        &:hover {
+            color: rgb(96 165 250);
+        }
     }
 }
