@@ -18,6 +18,10 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9489202619963673"
      crossorigin="anonymous"></script>
 
+     <?php if (has_post_thumbnail()) { ?>
+<meta property="og:image" content="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" />
+<?php } ?>
+
 </head>
 <body <?php body_class(); ?>>
     <div>
