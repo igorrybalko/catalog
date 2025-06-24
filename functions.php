@@ -320,3 +320,40 @@ function comment_form_change_cookies_consent( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'comment_form_change_cookies_consent' );
+
+
+function custom_search_include_meta_fields( $query ) {
+    if ( ! is_admin() && $query->is_main_query() && $query->is_search() ) {
+        // Подключаем JOIN и WHERE вручную через фильтры
+        add_filter( 'posts_join', 'custom_search_join' );
+        add_filter( 'posts_where', 'custom_search_where' );
+        add_filter( 'posts_groupby', 'custom_search_groupby' );
+    }
+}
+add_action( 'pre_get_posts', 'custom_search_include_meta_fields' );
+
+function custom_search_join( $join ) {
+    global $wpdb;
+    $join .= " LEFT JOIN {$wpdb->postmeta} AS meta_site_url ON {$wpdb->posts}.ID = meta_site_url.post_id ";
+    $join .= " LEFT JOIN {$wpdb->postmeta} AS meta_tags ON {$wpdb->posts}.ID = meta_tags.post_id ";
+    return $join;
+}
+
+function custom_search_where( $where ) {
+    global $wpdb;
+    $search = esc_sql( get_query_var('s') );
+
+    $where .= " OR (meta_site_url.meta_key = 'site_url' AND meta_site_url.meta_value LIKE '%{$search}%') ";
+    $where .= " OR (meta_tags.meta_key = 'tags' AND meta_tags.meta_value LIKE '%{$search}%') ";
+
+    return $where;
+}
+
+function custom_search_groupby( $groupby ) {
+    global $wpdb;
+    // Группировка обязательна, чтобы избежать дубликатов
+    if ( ! strpos( $groupby, "{$wpdb->posts}.ID" ) ) {
+        $groupby = "{$wpdb->posts}.ID";
+    }
+    return $groupby;
+}

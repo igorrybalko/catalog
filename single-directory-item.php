@@ -28,6 +28,7 @@ customSetPostViews(get_the_ID());
                 $logo = get_field('logo');
                 $siteUrl = get_field('site_url');
                 $video = get_field('video');
+                $tags = get_field('tags');
 
                 $labelSiteUrl = get_field('label_site_url');
                 if(!$labelSiteUrl){
@@ -44,7 +45,7 @@ customSetPostViews(get_the_ID());
                     <div class="mb-3 text-gray-500 text-sm"><i class="fa-solid fa-eye"></i> Перегляди: <?= $post_views_count;?></div>
                 <?php } ?>
                 <?php if($logo){?>
-                <div class="mb-2 max-w-32">
+                <div class="mb-2 max-w-36">
                     <a class="underline" target="_blank" href="<?= $siteUrl;?>">
                         <img class="max-h-28" src="<?= $logo?>" alt="logo">
                     </a>
@@ -70,6 +71,24 @@ customSetPostViews(get_the_ID());
                     </div>
                 </div>
                 <?php }?>
+
+                <?php if($tags) { ?>
+
+                    <div class="mb-5">
+                        <h4 class="font-bold mb-1 text-base">Мітки</h4>
+
+                        <?php 
+                            $tagsArr = explode(", ", $tags);
+                            foreach ($tagsArr as $tag) { ?>
+                                <a href="/?s=<?= $tag ?>" class="text-sm underline text-gray-500 mr-2 hover:text-blue-400">
+                                    <?= $tag ?>
+                                <a> 
+                        <?php } ?>
+                    </div>
+
+                <?php } ?>
+
+
                 <?php 
                         // If comments are open or we have at least one comment, load up the comment template.
                         if ( comments_open() || get_comments_number() ) :

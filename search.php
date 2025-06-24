@@ -1,9 +1,9 @@
 <?php 
 global $wp_query;
 
-$args = array(
+$args = [
     'post_type' => ['directory-item'],
- );
+];
 
 query_posts(array_merge($args, $wp_query->query));
 
@@ -35,8 +35,16 @@ if($sQuery){
             <?php while(have_posts()): the_post(); 
 
             $logo = get_field('logo');
+
+            if (is_numeric($logo)) {
+                $logo_url = wp_get_attachment_url($logo);
+            } else {
+                $logo_url = $logo;
+            }
+
+            
             if(!$logo){
-                $logo = get_template_directory_uri() . '/img/noimg.jpg';
+                $logo_url = get_template_directory_uri() . '/img/noimg.jpg';
             }
 
             $siteUrl = get_field('site_url');
@@ -53,7 +61,7 @@ if($sQuery){
 
                         <div class="mr-2.5 w-20 text-center pt-0.5 flex justify-center">
                             <a href="<?php the_permalink(); ?>">
-                                <img class="max-h-20" src="<?php echo $logo; ?>" alt="logo">
+                                <img class="max-h-20" src="<?php echo $logo_url; ?>" alt="logo">
                             </a>
                         </div>
 

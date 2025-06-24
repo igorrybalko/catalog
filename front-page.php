@@ -16,7 +16,7 @@ $cats = getCategories();
             <?php foreach ($cats as $cat) { ?>
 
                 <div>
-                    <h3 class="font-semibold">
+                    <h3 class="font-semibold mb-1">
                         <a href="<?= get_category_link( $cat->term_id ) ?>">
                             <?= $cat->name;?> (<?= $cat->count;?>)
                         </a>
