@@ -45,7 +45,7 @@ customSetPostViews(get_the_ID());
                     <div class="mb-3 text-gray-500 text-sm"><i class="fa-solid fa-eye"></i> Перегляди: <?= $post_views_count;?></div>
                 <?php } ?>
                 <?php if($logo){?>
-                <div class="mb-2 max-w-36">
+                <div class="mb-2 max-w-48">
                     <a class="underline" target="_blank" href="<?= $siteUrl;?>">
                         <img class="max-h-28" src="<?= $logo?>" alt="logo">
                     </a>
