@@ -16,28 +16,21 @@
                 </div>
 
                 <div class="slinkwr">
-                    <!-- <div class="flinks">
-                        <a class="slink slink-1" href="#" target="_blank"></a>
-                        <a class="slink slink-2" href="#" target="_blank"></a>
-                        <a class="slink slink-3" href="#" target="_blank"></a>
-                    </div> -->
-                   
-                    <!-- hit.ua -->
-                    <a href='http://hit.ua/?x=15878' target='_blank'>
-                    <script language="javascript" type="text/javascript"><!--
-                    Cd=document;Cr="&"+Math.random();Cp="&s=1";
-                    Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";
-                    Cp+="&t="+(new Date()).getTimezoneOffset();
-                    if(self!=top)Cp+="&f=1";
-                    //--></script>
-                   
-                    <script language="javascript" type="text/javascript"><!--
-                    Cd.write("<img src='//c.hit.ua/hit?i=15878&g=0&x=4"+Cp+Cr+
-                    "&r="+escape(Cd.referrer)+"&u="+escape(window.location.href)+
-                    "' border='0' width='88' height='15' "+
-                    "alt='' />");
-                    //--></script></a>
-                    <!-- / hit.ua -->
+            
+                    <!-- <a href='http://hit.ua/?x=15878' target='_blank'>
+                        <script>
+                        Cd=document;Cr="&"+Math.random();Cp="&s=1";
+                        Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";
+                        Cp+="&t="+(new Date()).getTimezoneOffset();
+                        if(self!=top)Cp+="&f=1";
+                        
+                        Cd.write("<img src='//c.hit.ua/hit?i=15878&g=0&x=4"+Cp+Cr+
+                        "&r="+escape(Cd.referrer)+"&u="+escape(window.location.href)+
+                        "' border='0' width='88' height='15' "+
+                        "alt='' />");
+                        </script>
+                    </a> -->
+                 
                 </div>
               
             </div>
