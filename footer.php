@@ -17,7 +17,7 @@
 
                 <div class="slinkwr">
             
-                    <!-- <a href='http://hit.ua/?x=15878' target='_blank'>
+                    <a href='http://hit.ua/?x=15878' target='_blank'>
                         <script>
                         Cd=document;Cr="&"+Math.random();Cp="&s=1";
                         Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";
@@ -29,7 +29,7 @@
                         "' border='0' width='88' height='15' "+
                         "alt='' />");
                         </script>
-                    </a> -->
+                    </a>
                  
                 </div>
               
