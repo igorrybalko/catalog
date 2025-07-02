@@ -20,10 +20,7 @@ $cats = get_categories( array(
 ) ); 
 
 ?>
-<div class="container">
-    <!-- <pre>
-        <?php //var_dump($rootCat)?>
-    </pre> -->
+<div class="container" data-catid="<?= $category->term_id?>" id="catwr">
 
     <div class="lg:flex gap-x-4">
 
