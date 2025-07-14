@@ -33,3 +33,24 @@ if (catWr.length) {
  const href = addLink.attr('href');
  addLink.attr('href', href + '?catid=' + catId);
 }
+
+const wpcf7Elm = document.querySelector(
+ '.page-template-add-site-custom-page .wpcf7'
+);
+
+if (wpcf7Elm) {
+ wpcf7Elm.addEventListener(
+  'wpcf7mailsent',
+  function (event) {
+   const tmpl =
+    '<div>Дякуємо. Форма відправлена</div>' +
+    '<div>Ви можете ще додати свій сайт в наш англомовний каталог - ' +
+    '<a href="https://webdir.top" target="_blank" class="underline">https://webdir.top</a></div>';
+
+    setTimeout(() => {
+        $('.wpcf7-response-output').html(tmpl);
+    }, 800);
+  },
+  false
+ );
+}

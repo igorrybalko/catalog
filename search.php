@@ -13,6 +13,8 @@ $sQuery = get_search_query();
 
 ?>
 <div class="container">
+<div class="lg:flex gap-x-4">
+<main class="lg:w-3/4 mb-5">
 
     
     <h1 class="font-bold mb-6 text-2xl">
@@ -98,5 +100,8 @@ if($sQuery){
         
         <?php }
     } ?>
+</main>
+<?php require_once (__DIR__ . '/includes/common/sidebar.php');?>
+</div>
 </div>
 <?php get_footer(); ?>

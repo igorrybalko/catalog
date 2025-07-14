@@ -224,51 +224,6 @@ require_once (__DIR__ . '/includes/functions/getCategories.php');
 require_once (__DIR__ . '/includes/functions/contactForm.php');
 
 
-/**
- * Check if Contact Form 7 Shortcode Exists
- * 
- * Only checks content for the `[contact-form-7]` shortcode in 
- * singular post types. Defaults to false for other templates.
- * 
- * @param int|null $post_id Optional. Post ID to check, otherwise 
- * it grabs it from the global `$post` object.
- * @return bool True if shortcode was found. False otherwise.
- */
-function tw_cf7_shortcode_exists($post_id = null)
-{
-    if (!is_null($post_id) || (is_singular() && class_exists('WPCF7'))) {
-        if (is_null($post_id)) {
-            global $post;
-            $post_id = $post->ID;
-        }
-        return in_array($post_id, CONF_7FORM_PAGE_IDS);
-    }
-    return false;
-}
-
-/**
- * Disable Contact Form 7's Recaptcha when form is not on page
- */
-add_action('wp_enqueue_scripts', function () {
-    if (!tw_cf7_shortcode_exists()) {
-        remove_action('wp_enqueue_scripts', 'wpcf7_recaptcha_enqueue_scripts', 20, 0);
-    }
-}, 1, 0);
-
-/**
- * Enable Contact Form 7's assets when form is on page
- */
-add_action('wp_enqueue_scripts', function () {
-    if (tw_cf7_shortcode_exists()) {
-        if (function_exists('wpcf7_enqueue_scripts')) {
-            wpcf7_enqueue_scripts();
-        }
-        if (function_exists('wpcf7_enqueue_styles')) {
-            wpcf7_enqueue_styles();
-        }
-    }
-}, 20, 0);
-
 add_filter('comment_form_default_fields', 'website_remove');
 function website_remove($fields)
 {
@@ -356,4 +311,16 @@ function custom_search_groupby( $groupby ) {
         $groupby = "{$wpdb->posts}.ID";
     }
     return $groupby;
+}
+
+
+function getCountFormPending() {
+
+    global $wpdb;
+    $form_id = 23;
+    $count = $wpdb->get_var( $wpdb->prepare(
+        "SELECT COUNT(*) FROM {$wpdb->prefix}db7_forms WHERE form_post_id = %d", $form_id
+    ) );
+
+    return $count;
 }

@@ -6,14 +6,21 @@ $items = get_posts([
 ]);
 ?>
 
-<aside class="lg:w-1/4">
+<div class="mb-6">
     <h3 class="font-bold mb-4 text-lg">Нові сайти в каталозі</h3>
 
     <?php foreach ($items as $item) { 
         $postDate = date("d/m/Y", strtotime($item->post_date));
         $logo = get_field('logo', $item->ID);
+
+        if (is_numeric($logo)) {
+            $logo_url = wp_get_attachment_url($logo);
+        } else {
+            $logo_url = $logo;
+        }
+
         if(!$logo){
-            $logo = get_template_directory_uri() . '/img/noimg.jpg';
+            $logo_url = get_template_directory_uri() . '/img/noimg.jpg';
         }
 
         ?>
@@ -23,7 +30,7 @@ $items = get_posts([
 
                 <div class="mr-2.5 w-20 text-center pt-0.5 flex justify-center">
                     <a href="<?php the_permalink($item->ID); ?>">
-                        <img class="max-h-20" src="<?php echo $logo; ?>" alt="logo">
+                        <img class="max-h-20" src="<?php echo $logo_url; ?>" alt="logo">
                     </a>
                 </div>
 
@@ -46,5 +53,5 @@ $items = get_posts([
                 </div>
             </div>
         </div>
-    <? } ?>   
-</aside>
+    <? } ?> 
+</div>

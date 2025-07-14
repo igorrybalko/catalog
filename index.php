@@ -36,7 +36,7 @@
         <?php endif; ?>
 
         </main>
-        <?php require_once (__DIR__ . '/includes/common/new_sites.php');?>
+        <?php require_once (__DIR__ . '/includes/common/sidebar.php');?>
     </div>
 </div>
 

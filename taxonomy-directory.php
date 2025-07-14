@@ -66,22 +66,25 @@ $cats = get_categories( array(
         </main>
 
         <aside class="lg:w-1/4 side-cats"> 
-            <h3 class="font-bold mb-2 text-lg">
-                <a href="<?= get_category_link( $rootCatId ) ?>">
-                    <?= $rootCatName?>
-                </a>
-            </h3>
-            <nav>
-                <ul>
-                <?php foreach ($cats as $cat) { ?>
-                    <li>
-                        <a class="<?php echo $category->term_id == $cat->term_id ? 'active' : ''; ?>" href="<?= get_category_link( $cat->term_id ) ?>">
-                            <?= $cat->name;?>
-                        </a>
-                    </li>
-                <?php } ?>
-                </ul>
-            </nav>
+            <div class="mb-6">
+                <h3 class="font-bold mb-2 text-lg">
+                    <a href="<?= get_category_link( $rootCatId ) ?>">
+                        <?= $rootCatName?>
+                    </a>
+                </h3>
+                <nav>
+                    <ul>
+                    <?php foreach ($cats as $cat) { ?>
+                        <li>
+                            <a class="<?php echo $category->term_id == $cat->term_id ? 'active' : ''; ?>" href="<?= get_category_link( $cat->term_id ) ?>">
+                                <?= $cat->name;?>
+                            </a>
+                        </li>
+                    <?php } ?>
+                    </ul>
+                </nav>
+            </div>
+            <?php require_once (__DIR__ . '/includes/common/count.php');?>
         </aside>
     </div>
 </div>
