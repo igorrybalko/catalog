@@ -58,7 +58,7 @@ add_action( 'wp_enqueue_scripts', 'register_theme_styles' );
 function register_theme_scripts() {
 
     wp_enqueue_script("jquery");
-    wp_enqueue_script('app', get_template_directory_uri() . '/js/app.min.js');
+    wp_enqueue_script('app', get_template_directory_uri() . '/js/app.min.js', [], '1.0.0', true);
     wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/33338162bf.js');
 
 }
@@ -324,3 +324,32 @@ function getCountFormPending() {
 
     return $count;
 }
+
+add_action('wp_enqueue_scripts', function() {
+    // delete "classic-theme-styles-inline-css"
+    wp_dequeue_style('classic-theme-styles');
+    wp_deregister_style('classic-theme-styles');
+
+}, 20);
+
+/**
+ * delete global-styles-inline-css
+ */
+add_action( 'init', function() {
+    remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+    remove_action( 'wp_footer', 'wp_enqueue_global_styles', 1 ); // на всякий случай
+});
+
+add_filter('wp_img_tag_add_auto_sizes', '__return_false');
+
+/**
+ * delete jquery-migrate
+ */
+add_action('wp_default_scripts', function( $scripts ) {
+    if ( ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff(
+            $scripts->registered['jquery']->deps,
+            ['jquery-migrate']
+        );
+    }
+});
