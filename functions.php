@@ -59,7 +59,6 @@ function register_theme_scripts() {
 
     wp_enqueue_script("jquery");
     wp_enqueue_script('app', get_template_directory_uri() . '/js/app.min.js', [], '1.0.0', true);
-    wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/33338162bf.js');
 
 }
 

@@ -43,7 +43,7 @@ $items = get_posts([
                     </h3>
 
                     <div class="mb-1 text-gray-500">
-                        <i class="fa-solid fa-calendar-days"></i> <?= $postDate;?>
+                        <i class="icon-calendar"></i> <?= $postDate;?>
                     </div>
                     <div>
                         <?= mb_substr(strip_tags($item->post_content), 0, 70);?>...

@@ -24,7 +24,7 @@
                             <?php the_title();?>
                         </a>
                     </h3>
-                    <div class="mb-3 text-gray-500 text-sm"><i class="fa-solid fa-calendar-days"></i> <?= get_the_date()?></div>
+                    <div class="mb-3 text-gray-500 text-sm"><i class="icon-calendar"></i> <?= get_the_date()?></div>
                     <div>
                         <?= mb_substr(strip_tags(get_the_content()), 0, 220); ?>...
                     </div>

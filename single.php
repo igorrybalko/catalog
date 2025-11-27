@@ -16,7 +16,7 @@ get_header();
                         </div>
                     <?php } ?>
                     <h1 class="font-bold mb-6 text-2xl"><?php the_title()?></h1>
-                    <div class="mb-3 text-gray-500 text-sm"><i class="fa-solid fa-calendar-days"></i> <?= get_the_date()?></div>
+                    <div class="mb-3 text-gray-500 text-sm"><i class="icon-calendar"></i> <?= get_the_date()?></div>
                     <div class="user-content mb-8">
                         <?php the_content();?>
                     </div>

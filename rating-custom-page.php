@@ -60,7 +60,7 @@ if ( have_posts() ): ?>
                 </h3>
 
                 <?php if(! empty( $post_views_count )){ ?>
-                    <div class="mb-1 text-gray-500 text-sm"><i class="fa-solid fa-eye"></i> Перегляди: <?= $post_views_count;?></div>
+                    <div class="mb-1 text-gray-500 text-sm"><i class="icon-eye"></i> Перегляди: <?= $post_views_count;?></div>
                 <?php } ?>
 
                 <div>
