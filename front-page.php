@@ -3,7 +3,7 @@
 $cats = getCategories();
 ?>
 
-<main class="container">
+<div class="container">
 
 <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
@@ -12,42 +12,58 @@ $cats = getCategories();
             <?php the_title();?>
         </h1>
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-            <?php foreach ($cats as $cat) { ?>
+        <div class="lg:flex gap-4">
 
-                <div>
-                    <h3 class="font-semibold mb-1">
-                        <a href="<?= get_category_link( $cat->term_id ) ?>">
-                            <?= $cat->name;?> (<?= $cat->count;?>)
-                        </a>
-                    </h3>
-                    <ul>
+            <main class="lg:w-3/4 mb-6">
 
-                        <?php foreach ($cat->children as $item) { ?>
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                    <?php foreach ($cats as $cat) { ?>
 
-                            <li>
-                                <a href="<?= get_category_link( $item->term_id ) ?>">
-                                    <?= $item->name;?> (<?= $item->count;?>)
+                        <div>
+                            <h3 class="font-semibold mb-1">
+                                <a href="<?= get_category_link( $cat->term_id ) ?>">
+                                    <?= $cat->name;?> (<?= $cat->count;?>)
                                 </a>
-                            </li>
+                            </h3>
+                            <ul>
 
-                        <?php } ?>
+                                <?php foreach ($cat->children as $item) { ?>
 
-                    </ul>
+                                    <li>
+                                        <a href="<?= get_category_link( $item->term_id ) ?>">
+                                            <?= $item->name;?> (<?= $item->count;?>)
+                                        </a>
+                                    </li>
+
+                                <?php } ?>
+
+                            </ul>
+                        </div>
+                    
+                    <?php } ?>
                 </div>
-            
-            <?php } ?>
-        </div>
 
-        <div class="user-content mb-5">
-            <?php the_content(); ?>
-        </div>
+                <div class="user-content mb-5">
+                    <?php the_content(); ?>
+                </div>
 
-        <?php require_once (__DIR__ . '/includes/common/rating.php');?>
+                <?php require_once (__DIR__ . '/includes/common/rating.php');?>
+
+            </main>
+
+            <aside class="lg:w-1/4">
+                <div class="mb-6">
+                    <?php require_once (__DIR__ . '/includes/common/count.php'); ?>
+                </div>
+                
+                <?php require_once (__DIR__ . '/includes/common/random.php'); ?>
+            </aside>
+
+        </div>
 
     <?php endwhile; ?>
 <?php endif; ?>
 
-</main>
+</div>
 
 <?php get_footer();
