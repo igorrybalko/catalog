@@ -12,7 +12,10 @@ $items = get_posts([
 
 <?php get_header(); ?>
 
-<main class="container">
+<div class="container">
+    <div class="lg:flex gap-x-4">
+
+        <main class="lg:w-3/4 mb-5">
 
 <?php
 if (have_posts()): ?>
@@ -73,6 +76,11 @@ if (have_posts()): ?>
     <?php endwhile; ?>
 <?php endif; ?>
 </main>
+
+<?php require_once (__DIR__ . '/includes/common/sidebar.php');?>
+
+</div>
+</div>
 
 <?php
 
