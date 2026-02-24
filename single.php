@@ -56,6 +56,9 @@ get_header();
                                         <a href="<?= get_permalink($sim_post->ID); ?>" title="<?= $sim_post->post_title; ?>" class="underline text-blue-700 hover:text-blue-400">
                                             <?= $sim_post->post_title; ?>
                                         </a>
+                                        <div>
+                                            <?= mb_substr(strip_tags($sim_post->post_content), 0, 150); ?>...
+                                        </div>
                                     </li>
                                 <?php } ?>
                                 </ul>

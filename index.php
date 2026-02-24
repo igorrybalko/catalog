@@ -19,11 +19,11 @@
 
                 <div class="mb-9">
 
-                    <h3 class="font-bold mb-1">
+                    <h2 class="font-bold mb-1 text-xl">
                         <a class="underline" href="<?php the_permalink(); ?>">
                             <?php the_title();?>
                         </a>
-                    </h3>
+                    </h2>
                     <div class="mb-3 text-gray-500 text-sm"><i class="icon-calendar"></i> <?= get_the_date()?></div>
                     <div>
                         <?= mb_substr(strip_tags(get_the_content()), 0, 220); ?>...
