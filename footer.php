@@ -4,7 +4,7 @@
         <div class="container">
             <div class="grid grid-cols-3 gap-4">
                 <div>
-                &copy; <?php echo date("Y"); ?> <span class="font-bold tracking-wide italic">
+                &copy; 2024-<?php echo date("Y"); ?> <span class="font-bold tracking-wide italic">
                                 <span class="text-2xl">Cat</span><span class="text-xs">alog</span>
                             </span>
                 </div>
@@ -27,7 +27,7 @@
                         Cd.write("<img src='//c.hit.ua/hit?i=15878&g=0&x=4"+Cp+Cr+
                         "&r="+escape(Cd.referrer)+"&u="+escape(window.location.href)+
                         "' border='0' width='88' height='15' "+
-                        "alt='' />");
+                        "alt='hitua' />");
                         </script>
                     </a>
                  

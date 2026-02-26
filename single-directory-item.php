@@ -46,9 +46,7 @@ customSetPostViews(get_the_ID());
                 <?php } ?>
                 <?php if($logo){?>
                 <div class="mb-2 max-w-48">
-                    <a class="underline" target="_blank" href="<?= $siteUrl;?>">
-                        <img class="max-h-28" src="<?= $logo?>" alt="logo">
-                    </a>
+                    <img class="max-h-28" src="<?= $logo?>" alt="logo">
                 </div>
                 <?php }?>
                 <div class="user-content mb-5">
