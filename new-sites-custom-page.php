@@ -32,6 +32,10 @@ if (have_posts()): ?>
         
     <h1 class="font-bold mb-6 text-2xl"><?php the_title()?></h1>
 
+    <div class="user-content mb-6">
+        <?php the_content();?>
+    </div>
+
     <?php foreach ($items as $item) { 
         $postDate = date("d/m/Y", strtotime($item->post_date));
         $logo = get_field('logo', $item->ID);
