@@ -34,7 +34,7 @@ $cats = get_categories( array(
     <div class="lg:flex gap-x-4">
 
         <main class="lg:w-3/4">
-            <h1 class="font-bold mb-6 text-2xl"><?= $category->name?></h1>
+            <h1 class="font-bold mb-6 text-2xl"><?= $category->name?><?php if($paged){ ?> - Сторінка <?php echo $paged; } ?></h1>
 
             <?php if(!$paged){ 
                 $catDescr = category_description();
