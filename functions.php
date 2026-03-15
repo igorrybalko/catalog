@@ -134,6 +134,23 @@ function wpa_show_permalinks( $post_link, $post ){
 }
 add_filter( 'post_type_link', 'wpa_show_permalinks', 1, 2 );
 
+add_filter( 'wpseo_breadcrumb_links', function( $links ) {
+    foreach ( $links as $key => $link ) {
+        // Удаляем элемент, который ведёт на несуществующий архив CPT
+        if ( isset( $link['ptarchive'] ) && $link['ptarchive'] === 'directory-item' ) {
+            unset( $links[ $key ] );
+        }
+    }
+    return array_values( $links );
+} );
+
+add_filter( 'wpseo_sitemap_post_type_archive_link', function( $link, $post_type ) {
+    if ( $post_type === 'directory-item' ) {
+        return false;
+    }
+    return $link;
+}, 10, 2 );
+
 
 //Remove Gutenberg Block Library CSS from loading on the frontend
 function smartwp_remove_wp_block_library_css(){

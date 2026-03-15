@@ -40,16 +40,14 @@
             <div class="container">
                 <div class="flex justify-between md:items-center flex-col md:flex-row">
                     <div class="flex justify-between items-center">
-                        <div class="flex items-center">
-                            <a href="/" class="header__logo"> 
+                        <a href="/" class="flex items-center">
+                            <span class="header__logo"> 
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo_cat.png" alt="logo">
-                            </a>
-                            <span class="pl-4 font-bold tracking-wide italic">
-                                <a href="/">
-                                    <span class="text-2xl">Cat</span><span class="text-xs">alog</span>
-                                </a>
                             </span>
-                        </div>
+                            <span class="pl-4 font-bold tracking-wide italic">
+                                <span class="text-2xl">Cat</span><span class="text-xs">alog</span>
+                            </span>
+                        </a>
                         <div class="md:hidden" id="tm-btn">
                             Меню
                         </div>

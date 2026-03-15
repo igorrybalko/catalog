@@ -17,6 +17,14 @@ $items = get_posts( [
 <?php get_header();?>
 
 <div class="container">
+    <?php 
+        if( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb(
+                '<nav class="breadcrumbs text-xs mb-6 text-gray-500" aria-label="Breadcrumbs">',
+                '</nav>'
+            );
+        }
+    ?>
     <div class="lg:flex gap-x-4">
 
         <main class="lg:w-3/4 mb-5">
