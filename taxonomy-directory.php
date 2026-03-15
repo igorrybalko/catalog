@@ -2,6 +2,8 @@
 
 $category = get_queried_object();
 
+$paged = get_query_var('paged');
+
 $rootCatId = $category->term_id;
 $rootCatName = $category->name;
 
@@ -33,6 +35,17 @@ $cats = get_categories( array(
 
         <main class="lg:w-3/4">
             <h1 class="font-bold mb-6 text-2xl"><?= $category->name?></h1>
+
+            <?php if(!$paged){ 
+                $catDescr = category_description();
+
+                if($catDescr){
+            ?>
+                <div class="user-content mb-6">
+                    <?php echo $catDescr; ?>
+                </div>
+                <?php }
+            } ?>
 
             <?php if(have_posts()): ?>
                 <?php while(have_posts()): the_post(); 
