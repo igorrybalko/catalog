@@ -20,7 +20,7 @@ $cats = getCategories();
                     <?php foreach ($cats as $cat) { ?>
 
                         <div>
-                            <h3 class="font-semibold mb-1">
+                            <h3 class="font-semibold mb-1 hover:text-cyan-700">
                                 <a href="<?= get_category_link( $cat->term_id ) ?>">
                                     <?= $cat->name;?> (<?= $cat->count;?>)
                                 </a>
@@ -30,7 +30,7 @@ $cats = getCategories();
                                 <?php foreach ($cat->children as $item) { ?>
 
                                     <li>
-                                        <a href="<?= get_category_link( $item->term_id ) ?>">
+                                        <a href="<?= get_category_link( $item->term_id ) ?>" class="hover:text-cyan-700">
                                             <?= $item->name;?> (<?= $item->count;?>)
                                         </a>
                                     </li>
@@ -47,7 +47,8 @@ $cats = getCategories();
                     <?php the_content(); ?>
                 </div>
 
-                <?php require_once (__DIR__ . '/includes/common/rating.php');?>
+                <?php require_once (__DIR__ . '/includes/home/rating.php');?>
+                <?php require_once (__DIR__ . '/includes/home/lastBlogItems.php');?>
 
             </main>
 

@@ -52,4 +52,4 @@ $post_views_count = get_post_meta( $item->ID, 'post_views_count', true );
 
 <?php } ?>
 
-<div><a href="/rating" class="underline">Переглянути Топ-10 сайтів >>></a></div>
+<div class="mb-6"><a href="/rating" class="underline">Переглянути Топ-10 сайтів >>></a></div>

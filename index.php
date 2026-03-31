@@ -17,10 +17,15 @@
                 $imgUrl = get_the_post_thumbnail_url();
             ?>
 
-                <?php if($imgUrl){ ?>
+                <?php if($imgUrl){ 
+
+                    $image_id = get_post_thumbnail_id(); // Get the image ID
+                    $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+                    
+                    ?>
                     <div class="mb-3 max-h-[200px] rounded-xl overflow-hidden">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
-                            <img class="object-cover w-full object-center rounded-xl h-full max-h-[200px] hover:scale-105 duration-500" src="<?= $imgUrl?>" alt="">
+                            <img class="object-cover w-full object-center rounded-xl h-full max-h-[200px] hover:scale-105 duration-500" src="<?= $imgUrl?>" alt="<?=$alt_text?>">
                         </a>
                     </div>
                 <?php } ?>
