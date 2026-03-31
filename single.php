@@ -61,7 +61,7 @@ get_header();
                    
                         if( $similar_posts ) { ?>
 
-                        <nav>
+                        
                             <ul>
                             <?php
                                 foreach ($similar_posts as $sim_post){ ?>
@@ -75,7 +75,7 @@ get_header();
                                     </li>
                                 <?php } ?>
                                 </ul>
-                            </nav>
+                            
                         <?php 
 
                         }
