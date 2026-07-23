@@ -18,7 +18,7 @@
                 <div class="slinkwr">
 
                     <div class="mb-3">
-                        <a href='http://hit.ua/?x=15878' target='_blank'>
+                        <a href='http://hit.ua/?x=15878' target='_blank' rel="nofollow noreferrer">
                             <script>
                             Cd=document;Cr="&"+Math.random();Cp="&s=1";
                             Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";

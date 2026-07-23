@@ -43,9 +43,7 @@ if (wpcf7Elm) {
   'wpcf7mailsent',
   function (event) {
    const tmpl =
-    '<div>Дякуємо. Форма відправлена</div>' + 
-    '<div>Якщо ви міжнародна організація або орієнтуєтесть на іноземних користувачів, то ви можете ще додати свій сайт в наш англомовний каталог - ' +
-    '<a href="https://webdir.top" target="_blank" class="underline">https://webdir.top</a></div>';
+    '<div>Дякуємо. Форма відправлена</div>';
 
     setTimeout(() => {
         $('.wpcf7-response-output').html(tmpl);
